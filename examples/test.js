@@ -9,7 +9,8 @@ let discovery = new ArduinoDiscovery({
 discovery
 	.on('discover', device => {
 		console.log('New device:');
-		console.log('* ID:', device.getOpt('id'));
+		console.log('* Identification:', device.getOpt('id'));
+		console.log('* Type:', device.getOpt('type'));
 		console.log('* Address:',device.getOpt('address')+':'+device.getOpt('port'));
 		console.log('* Local webserver port: ', device.getOpt('localPort'));
 		
@@ -20,7 +21,9 @@ discovery
 			console.log('* Subscribed to triggers.');
 		});
 		
-		device.query('button', '').then( (res) => {
+		console.log("QUERY");
+		
+		device.query('test', 'act', '').then( (res) => {
 			console.log('* Test command returned:',res);
 		}).catch( (err) => {
 			console.log('* Test command error:',err);
