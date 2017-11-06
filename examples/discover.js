@@ -12,7 +12,7 @@ discovery
 		console.log('* ID:', device.getOpt('id'));
 		console.log('* Address:',device.getOpt('address')+':'+device.getOpt('port'));
 		console.log('* Local webserver port: ', device.getOpt('localPort'));
-		
+
 		console.log('* API:');
 		let api = device.getOpt('api');
 		for (var call in api) {
@@ -20,4 +20,4 @@ discovery
 			console.log(' - '+call+' ('+rettype+')');
 		}
 	})
-	.start()
+	.start();
