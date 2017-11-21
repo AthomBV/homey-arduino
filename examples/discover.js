@@ -6,8 +6,7 @@ let discovery = new ArduinoDiscovery({
 	broadcastInterval: 5 * 1000
 });
 
-discovery
-	.on('device', device => {
+discovery.on('discover', device => {
 		console.log('New device:');
 		console.log('* ID:', device.getOpt('id'));
 		console.log('* Address:',device.getOpt('address')+':'+device.getOpt('port'));
